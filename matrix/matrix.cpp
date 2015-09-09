@@ -6,7 +6,11 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	RealMatrix matrix = RealMatrix("matrix.txt");
-	matrix.printMatrix();
+	setlocale(LC_ALL, "Russian");
+	RealMatrix matrix1 = RealMatrix("matrix1.txt");
+	RealMatrix matrix2 = RealMatrix("matrix2.txt");
+	matrix1 *= matrix2;
+	matrix2 *= 3;
+	matrix2.printMatrix();
 	return 0;
 }
