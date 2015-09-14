@@ -10,16 +10,6 @@ RealMatrix::RealMatrix(int whidth, int height )
 		this->matrix.push_back(temp);
 	}
 }
-RealMatrix::RealMatrix()
-{
-	int whidth = 0;
-	int height = 0;
-	for (int i = 0; i < height; i++)
-	{
-		vector<double> temp(whidth);
-		this->matrix.push_back(temp);
-	}
-}
 //принимает параметр - имя текстового файла с матрицей
 RealMatrix::RealMatrix(string name)
 {
@@ -130,7 +120,7 @@ void RealMatrix::adjusmentMatrix()
 			this->matrix[i].resize(max);		
 }
 //проверяет возможность перемножения матриц
-bool RealMatrix::checkForComp(vector<vector<double>> matrix1, vector<vector<double>> matrix2)
+bool RealMatrix::checkForComp(vector<vector<double>> &matrix1, vector<vector<double>> &matrix2)
 {
 	//проверка на равность кол-ва столбцов 1-ой мат-цы и кол-ва строк во 2-ой
 	if (matrix1[0].size() == matrix2.size())
@@ -161,4 +151,104 @@ void RealMatrix::operator *=(int a)
 	for (int i = 0; i < this->matrix.size(); i++)
 	for (int j = 0; j < this->matrix[i].size(); j++)
 		this->matrix[i][j] *= a;
+}
+RealMatrix RealMatrix::operator -(RealMatrix matrix)
+{
+	if (checkShape(this->matrix, matrix.matrix))
+	{
+		RealMatrix temp = RealMatrix(this->matrix.size(), this->matrix[0].size());
+		for (int i = 0; i < this->matrix.size();i++)
+		for (int j = 0; j < this->matrix[0].size(); i++)
+			temp.matrix[i][j] = this->matrix[i][j] - matrix.matrix[i][j];
+		return temp;
+	}
+	return *this;
+}
+void RealMatrix::operator -=(RealMatrix matrix)
+{
+	if (checkShape(this->matrix, matrix.matrix))
+	{
+		for (int i = 0; i < this->matrix.size(); i++)
+		for (int j = 0; j < this->matrix[0].size(); i++)
+			this->matrix[i][j] = this->matrix[i][j] - matrix.matrix[i][j];
+	}
+}
+RealMatrix RealMatrix::operator-(int a)
+{
+	//1. опредилить возможность отнимать от матрицы число
+	if (this->squareMatrix())
+	{
+		//2. создать единичную марицу умноженную на число
+		RealMatrix eMatrix = createE(this->matrix.size()) * a;
+		//3. отнять
+		return (*this) - eMatrix;
+	}
+	return *this;
+}
+void RealMatrix::operator -=(int a)
+{
+	//1. опредилить возможность отнимать от матрицы число
+	if (this->squareMatrix())
+	{
+		//2. создать единичную марицу умноженную на число
+		RealMatrix eMatrix = createE(this->matrix.size()) * a;
+		//3. отнять
+		*this= *this - eMatrix;
+	}
+}
+bool RealMatrix::checkShape(vector<vector<double>> &matrix1, vector<vector<double>> &matrix2)
+{
+	if ((matrix1.size() == matrix2.size()) && matrix1[0].size() == matrix2[0].size())
+		return true;
+	return false;
+}
+bool RealMatrix::squareMatrix()
+{
+	if (this->matrix.size() == this->matrix[0].size())
+		return true;
+	return false;
+}
+RealMatrix RealMatrix::operator +(RealMatrix matrix)
+{
+	if (checkShape(this->matrix, matrix.matrix))
+	{
+		RealMatrix temp = RealMatrix(this->matrix.size(), this->matrix[0].size());
+		for (int i = 0; i < this->matrix.size(); i++)
+		for (int j = 0; j < this->matrix[0].size(); i++)
+			temp.matrix[i][j] = this->matrix[i][j] + matrix.matrix[i][j];
+		return temp;
+	}
+	return *this;
+}
+void RealMatrix::operator +=(RealMatrix matrix)
+{
+	if (checkShape(this->matrix, matrix.matrix))
+	{
+		for (int i = 0; i < this->matrix.size(); i++)
+		for (int j = 0; j < this->matrix[0].size(); i++)
+			this->matrix[i][j] = this->matrix[i][j] + matrix.matrix[i][j];
+	}
+}
+RealMatrix RealMatrix::operator+(int a)
+{
+	//1. опредилить возможность сложить матрицу и число
+	if (this->squareMatrix())
+	{
+		//2. создать единичную марицу умноженную на число
+		RealMatrix eMatrix = createE(this->matrix.size()) * a;
+		//3. сложить
+		return (*this) + eMatrix;
+	}
+	return *this;
+}
+void RealMatrix::operator +=(int a)
+{
+	//1.  опредилить возможность сложить матрицу и число
+	if (this->squareMatrix())
+	{
+		//2. создать единичную марицу умноженную на число
+		RealMatrix eMatrix = createE(this->matrix.size()) * a;
+		//3. сложить
+		*this = *this + eMatrix;
+	}
 }
