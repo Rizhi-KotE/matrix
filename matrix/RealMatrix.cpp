@@ -252,3 +252,170 @@ void RealMatrix::operator +=(int a)
 		*this = *this + eMatrix;
 	}
 }
+
+//перегрузка оператора присваивания
+RealMatrix& RealMatrix::operator =(RealMatrix& mat)
+{
+	for (int i = 0; i < matrix.size(); i++)
+		matrix[i].clear();
+	matrix.clear();
+	matrix.resize(mat.matrix.size());
+	for (int i = 0; i < matrix.size(); i++)
+	{
+		matrix[i].resize(mat.matrix[i].size());
+		for (int j = 0; j < matrix[i].size(); j++)
+			matrix[i][j] = mat.matrix[i][j];
+	}
+	return *this;
+}
+
+//перегрузка оператора /
+RealMatrix RealMatrix::operator /(double x)
+{
+	for (int i = 0; i < matrix.size(); i++)
+	for (int j = 0; j < matrix[i].size(); j++)
+		matrix[i][j] /= x;
+	return *this;
+}
+
+//перегрузка оператора /=
+void RealMatrix::operator /=(double x)
+{
+	for (int i = 0; i < matrix.size(); i++)
+	for (int j = 0; j < matrix[i].size(); j++)
+		matrix[i][j] /= x;
+}
+
+//перегрузка оператора ^=
+void RealMatrix::operator ^=(int n)
+{
+	//проверка на квадратность матрицы
+	if (this->matrix.size() != this->matrix[0].size())
+	{
+		cout << "Matrix is not square";
+		return;
+	}
+	vector <vector <double>> temp; //временная матрица temp
+	temp.resize(matrix.size());
+	int x = matrix[0].size();
+	for (int i = 0; i < temp.size(); i++)
+	{
+		temp[i].resize(x);
+		for (int j = 0; j < x; j++)
+			temp[i][j] = matrix[i][j];
+	}
+	//возведение в степень n
+	for (int i = 1; i < n; i++)
+	{
+		matrix = mult(matrix, temp);
+	}
+	for (int i = 0; i < temp.size(); i++)
+		temp[i].clear();
+	temp.clear();
+}
+
+//перегрузка оператора ^
+RealMatrix RealMatrix::operator ^(int n)
+{
+	//проверка на квадратность матрицы
+	if (this->matrix.size() != this->matrix[0].size())
+	{
+		cout << "Matrix is not square";
+		return *this;
+	}
+	vector <vector <double>> temp; //временная матрица temp
+	temp.resize(matrix.size());
+	int x = matrix[0].size();
+	for (int i = 0; i < temp.size(); i++)
+	{
+		temp[i].resize(x);
+		for (int j = 0; j < x; j++)
+			temp[i][j] = matrix[i][j];
+	}
+	//возведение в степень n
+	for (int i = 1; i < n; i++)
+	{
+		matrix = mult(matrix, temp);
+	}
+	for (int i = 0; i < temp.size(); i++)
+		temp[i].clear();
+	temp.clear();
+	return *this;
+}
+
+vector <vector <double>> RealMatrix::mult(vector<vector<double>> mat1, vector<vector<double>> mat2)
+{
+	vector <vector <double>> temp;
+	if (checkForComp(mat1, mat2))
+	{
+		temp.resize(mat1.size());
+		int x = mat2[0].size();
+		for (int i = 0; i < mat1.size(); i++)
+			temp[i].resize(x);
+		//выбираем строку 1-ой матрицы
+		for (int i = 0; i < mat1.size(); i++)
+		{
+			//выбираем столбец 2-ой матрицы
+			for (int j = 0; j < x; j++)
+			{
+				temp[i][j] = 0;
+				//перемножаем строку 1-ой матрицы и столбец 2-ой матрицы
+				for (int z = 0; z < mat2.size(); z++)
+					temp[i][j] = temp[i][j] + mat1[i][z] * mat2[z][j];
+				//выбираем следущий столбец
+			}
+			//выбираем следующую стороку
+		}
+	}
+	return temp;
+}
+
+/*bool RealMatrix::checkForComp(vector<vector<double>> &matrix1, vector<vector<double>> &matrix2)
+{
+	//проверка на равность кол-ва столбцов 1-ой мат-цы и кол-ва строк во 2-ой
+	if (matrix1[0].size() == matrix2.size())
+		return true;
+	cout << " умножение невозможно" << endl;
+	return false;
+}*/
+
+//вычисление детерминанта
+int RealMatrix::det()
+{
+	//проверка на квадратность матрицы
+	if (this->matrix.size() != this->matrix[0].size())
+	{
+		cout << "Matrix is not square";
+		return NULL;
+	}
+	vector <vector <double>> temp;
+	int x = matrix.size();
+	temp.resize(x);
+	for (int i = 0; i < x; i++)
+	{
+		temp[i].resize(matrix[i].size());
+	}
+	for (int i = 0; i < x; i++)
+	for (int j = 0; j < temp[i].size(); j++)
+		temp[i][j] = matrix[i][j];
+	double a = 0;
+	for (int i = 1; i < x; i++) //приведение матрицы к ступенчатому виду
+	{
+		for (int j = i; j < x; j++)
+		{
+			a = temp[j][i - 1] / temp[i - 1][i - 1];
+			for (int k = i - 1; k < x; k++)
+				temp[j][k] = temp[j][k] - temp[i - 1][k] * a;
+		}
+	}                           ////////////////////////////////////////
+	int deter = 1;
+	for (int i = 0; i < x; i++) //перемножение диоганальных эл-ов
+	{
+		deter *= temp[i][i];
+	}
+	for (int i = 0; i < x; i++)
+	for (int j = 0; j < temp[i].size(); j++)
+		temp[i].clear();
+	temp.clear();
+	return deter;
+}

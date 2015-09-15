@@ -9,9 +9,10 @@ int _tmain(int argc, _TCHAR* argv[])
 	setlocale(LC_ALL, "Russian");
 	RealMatrix matrix1 = RealMatrix("matrix1.txt");
 	RealMatrix matrix2 = RealMatrix("matrix2.txt");
-	matrix1 *= matrix2;
-	matrix2 = 3 * matrix1;
-	matrix1 * 3;
-	matrix2.printMatrix();
+	RealMatrix matrix3 = RealMatrix("matrix3.txt");
+	RealMatrix matrix4 = RealMatrix("matrix4.txt");
+	cout << matrix4.det();
+	//matrix3.printMatrix();
+	system("pause");
 	return 0;
 }

@@ -13,6 +13,7 @@ class RealMatrix
 private:
 	vector < vector <double> > matrix;
 	bool bad = false;
+	vector <vector <double>> mult(vector <vector <double>>, vector <vector <double>>);
 public:
 	RealMatrix(int width = 0,int height = 0 );//создает пустую матрицу размером width*height
 	RealMatrix(string );//Считывает матрицу из файла. Принимает строку-адрес файла
@@ -30,6 +31,12 @@ public:
 	void operator +=(RealMatrix);//сумма матриц
 	RealMatrix operator +(int);//складывает число и матрицу
 	void operator +=(int);//складывает число и матрицу
+	RealMatrix& operator = (RealMatrix&);//перегрузка оператора присваивания
+	RealMatrix operator /(double);//деление матрицы на число	
+	void operator /=(double);//деление матрицы на число
+	void operator ^=(int);//возведение матрицы в степень
+	RealMatrix operator ^(int);//возведение матрицы в степень
+	int det();
 	~RealMatrix();
 private:
 	bool checkForComp(vector<vector<double>> &, vector<vector<double>> &);
