@@ -1,3 +1,12 @@
+п»ї/*!
+\file
+\brief Р—Р°РіРѕР»РѕРІРѕС‡РЅС‹Р№ С„Р°Р№Р» СЃ РѕРїРёСЃР°РЅРёРµРј РєР»Р°СЃСЃР°
+
+Р”Р°РЅРЅС‹Р№ С„Р°Р№Р» СЃРѕРґРµСЂР¶РёС‚ РІ СЃРµР±Рµ РѕРїРёСЃР°РЅРёРµ РѕСЃРЅРѕРІРЅРѕРіРѕ РєР»Р°СЃСЃР°
+*/
+
+
+
 #pragma once
 #include "stdafx.h"
 #include <vector>
@@ -15,36 +24,41 @@ private:
 	bool bad = false;
 	vector <vector <double>> mult(vector <vector <double>>, vector <vector <double>>);
 public:
-	RealMatrix(int width = 0,int height = 0 );//создает пустую матрицу размером width*height
-	RealMatrix(string );//Считывает матрицу из файла. Принимает строку-адрес файла
-	void printMatrix();//печатает матрицу
-	RealMatrix operator *(RealMatrix );//умножает матрицу на матрицу
-	void operator *= (RealMatrix );//умножает матрицу на матрицу
-	RealMatrix operator *(int );//умножает матрицу на число
-	void operator *=(int );//умножает матрицу на число
-	RealMatrix operator -(RealMatrix);//отнимает от матрицы матрицу
-	void operator -=(RealMatrix);//отнимает от матрицы матрицу
-	RealMatrix operator -(int);//отнимает от матрицы число
-	void operator -=(int);//отнимает от матрицы число
-	RealMatrix createE(int );//создает единичную матрицу
-	RealMatrix operator +(RealMatrix);//сумма матриц
-	void operator +=(RealMatrix);//сумма матриц
-	RealMatrix operator +(int);//складывает число и матрицу
-	void operator +=(int);//складывает число и матрицу
-	RealMatrix& operator = (RealMatrix&);//перегрузка оператора присваивания
-	RealMatrix operator /(double);//деление матрицы на число	
-	void operator /=(double);//деление матрицы на число
-	void operator ^=(int);//возведение матрицы в степень
-	RealMatrix operator ^(int);//возведение матрицы в степень
+	RealMatrix(int width = 0,int height = 0 );//СЃРѕР·РґР°РµС‚ РїСѓСЃС‚СѓСЋ РјР°С‚СЂРёС†Сѓ СЂР°Р·РјРµСЂРѕРј width*height
+	RealMatrix(string );//РЎС‡РёС‚С‹РІР°РµС‚ РјР°С‚СЂРёС†Сѓ РёР· С„Р°Р№Р»Р°. РџСЂРёРЅРёРјР°РµС‚ СЃС‚СЂРѕРєСѓ-Р°РґСЂРµСЃ С„Р°Р№Р»Р°
+	/*!
+	РџРµС‡Р°С‚Р°РµС‚ РјР°С‚СЂРёС†Сѓ
+
+	*/
+	void printMatrix();//РїРµС‡Р°С‚Р°РµС‚ РјР°С‚СЂРёС†Сѓ
+
+	RealMatrix operator *(RealMatrix );//СѓРјРЅРѕР¶Р°РµС‚ РјР°С‚СЂРёС†Сѓ РЅР° РјР°С‚СЂРёС†Сѓ
+	void operator *= (RealMatrix );//СѓРјРЅРѕР¶Р°РµС‚ РјР°С‚СЂРёС†Сѓ РЅР° РјР°С‚СЂРёС†Сѓ
+	RealMatrix operator *(int );//СѓРјРЅРѕР¶Р°РµС‚ РјР°С‚СЂРёС†Сѓ РЅР° С‡РёСЃР»Рѕ
+	void operator *=(int );//СѓРјРЅРѕР¶Р°РµС‚ РјР°С‚СЂРёС†Сѓ РЅР° С‡РёСЃР»Рѕ
+	RealMatrix operator -(RealMatrix);//РѕС‚РЅРёРјР°РµС‚ РѕС‚ РјР°С‚СЂРёС†С‹ РјР°С‚СЂРёС†Сѓ
+	void operator -=(RealMatrix);//РѕС‚РЅРёРјР°РµС‚ РѕС‚ РјР°С‚СЂРёС†С‹ РјР°С‚СЂРёС†Сѓ
+	RealMatrix operator -(int);//РѕС‚РЅРёРјР°РµС‚ РѕС‚ РјР°С‚СЂРёС†С‹ С‡РёСЃР»Рѕ
+	void operator -=(int);//РѕС‚РЅРёРјР°РµС‚ РѕС‚ РјР°С‚СЂРёС†С‹ С‡РёСЃР»Рѕ
+	RealMatrix createE(int );//СЃРѕР·РґР°РµС‚ РµРґРёРЅРёС‡РЅСѓСЋ РјР°С‚СЂРёС†Сѓ
+	RealMatrix operator +(RealMatrix);//СЃСѓРјРјР° РјР°С‚СЂРёС†
+	void operator +=(RealMatrix);//СЃСѓРјРјР° РјР°С‚СЂРёС†
+	RealMatrix operator +(int);//СЃРєР»Р°РґС‹РІР°РµС‚ С‡РёСЃР»Рѕ Рё РјР°С‚СЂРёС†Сѓ
+	void operator +=(int);//СЃРєР»Р°РґС‹РІР°РµС‚ С‡РёСЃР»Рѕ Рё РјР°С‚СЂРёС†Сѓ
+	RealMatrix& operator = (RealMatrix&);//РїРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
+	RealMatrix operator /(double);//РґРµР»РµРЅРёРµ РјР°С‚СЂРёС†С‹ РЅР° С‡РёСЃР»Рѕ	
+	void operator /=(double);//РґРµР»РµРЅРёРµ РјР°С‚СЂРёС†С‹ РЅР° С‡РёСЃР»Рѕ
+	void operator ^=(int);//РІРѕР·РІРµРґРµРЅРёРµ РјР°С‚СЂРёС†С‹ РІ СЃС‚РµРїРµРЅСЊ
+	RealMatrix operator ^(int);//РІРѕР·РІРµРґРµРЅРёРµ РјР°С‚СЂРёС†С‹ РІ СЃС‚РµРїРµРЅСЊ
 	int det();
 	~RealMatrix();
 private:
 	bool checkForComp(vector<vector<double>> &, vector<vector<double>> &);
-	void adjusmentMatrix();//некорректную матрицу добивает нулями
+	void adjusmentMatrix();//РЅРµРєРѕСЂСЂРµРєС‚РЅСѓСЋ РјР°С‚СЂРёС†Сѓ РґРѕР±РёРІР°РµС‚ РЅСѓР»СЏРјРё
 	bool checkShape(vector<vector<double>> &, vector<vector<double>> &);
 	bool squareMatrix();
 };
 
-RealMatrix operator *(int a, RealMatrix matrix);//умножает число на матрицу
-RealMatrix operator -(int a, RealMatrix matrix);//отнимает от числа матрицу
-RealMatrix operator +(int a, RealMatrix matrix); // складывает число и матрицу
+RealMatrix operator *(int a, RealMatrix matrix);//СѓРјРЅРѕР¶Р°РµС‚ С‡РёСЃР»Рѕ РЅР° РјР°С‚СЂРёС†Сѓ
+RealMatrix operator -(int a, RealMatrix matrix);//РѕС‚РЅРёРјР°РµС‚ РѕС‚ С‡РёСЃР»Р° РјР°С‚СЂРёС†Сѓ
+RealMatrix operator +(int a, RealMatrix matrix); // СЃРєР»Р°РґС‹РІР°РµС‚ С‡РёСЃР»Рѕ Рё РјР°С‚СЂРёС†Сѓ

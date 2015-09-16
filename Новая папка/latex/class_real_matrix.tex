@@ -1,0 +1,350 @@
+\section{Real\+Matrix Class Reference}
+\label{class_real_matrix}\index{Real\+Matrix@{Real\+Matrix}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Real\+Matrix} (int width=0, int height=0)
+\item 
+{\bf Real\+Matrix} (string)
+\item 
+void {\bf print\+Matrix} ()
+\item 
+{\bf Real\+Matrix} {\bf operator$\ast$} ({\bf Real\+Matrix})
+\item 
+void {\bf operator$\ast$=} ({\bf Real\+Matrix})
+\item 
+{\bf Real\+Matrix} {\bf operator$\ast$} (int)
+\item 
+void {\bf operator$\ast$=} (int)
+\item 
+{\bf Real\+Matrix} {\bf operator-\/} ({\bf Real\+Matrix})
+\item 
+void {\bf operator-\/=} ({\bf Real\+Matrix})
+\item 
+{\bf Real\+Matrix} {\bf operator-\/} (int)
+\item 
+void {\bf operator-\/=} (int)
+\item 
+{\bf Real\+Matrix} {\bf create\+E} (int)
+\item 
+{\bf Real\+Matrix} {\bf operator+} ({\bf Real\+Matrix})
+\item 
+void {\bf operator+=} ({\bf Real\+Matrix})
+\item 
+{\bf Real\+Matrix} {\bf operator+} (int)
+\item 
+void {\bf operator+=} (int)
+\item 
+{\bf Real\+Matrix} \& {\bf operator=} ({\bf Real\+Matrix} \&)
+\item 
+{\bf Real\+Matrix} {\bf operator/} (double)
+\item 
+void {\bf operator/=} (double)
+\item 
+void {\bf operator$^\wedge$=} (int)
+\item 
+{\bf Real\+Matrix} {\bf operator$^\wedge$} (int)
+\item 
+int {\bf det} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Real\+Matrix@{Real\+Matrix}!Real\+Matrix@{Real\+Matrix}}
+\index{Real\+Matrix@{Real\+Matrix}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{Real\+Matrix(int width=0, int height=0)}]{\setlength{\rightskip}{0pt plus 5cm}Real\+Matrix\+::\+Real\+Matrix (
+\begin{DoxyParamCaption}
+\item[{int}]{whidth = {\ttfamily 0}, }
+\item[{int}]{height = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_a3a3c8cd0f04e632eb12d9ff5cd52a4ee}
+Конструктор 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em whidth} & количество столбцов \\
+\hline
+\mbox{\tt in}  & {\em height} & количество строк \\
+\hline
+\end{DoxyParams}
+\index{Real\+Matrix@{Real\+Matrix}!Real\+Matrix@{Real\+Matrix}}
+\index{Real\+Matrix@{Real\+Matrix}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{Real\+Matrix(string)}]{\setlength{\rightskip}{0pt plus 5cm}Real\+Matrix\+::\+Real\+Matrix (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_aa865ccc3b2d92d7e3e7e813d9420b0be}
+Конструктор 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & имя фала с матрицей \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Real\+Matrix@{Real\+Matrix}!create\+E@{create\+E}}
+\index{create\+E@{create\+E}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{create\+E(int)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real\+Matrix} Real\+Matrix\+::create\+E (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_a1118b10a7ba5a1901353bebddae51e82}
+Создает единичную матрицу заданного размера 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em а} & размер матрицы \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+единичную матрицу заданного размера 
+\end{DoxyReturn}
+\index{Real\+Matrix@{Real\+Matrix}!det@{det}}
+\index{det@{det}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{det()}]{\setlength{\rightskip}{0pt plus 5cm}int Real\+Matrix\+::det (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_a39e66cc9aeafb4ce59b52da060df7a44}
+Нахождение опредилителя
+
+\begin{DoxyReturn}{Returns}
+число 
+\end{DoxyReturn}
+\index{Real\+Matrix@{Real\+Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator$\ast$(\+Real\+Matrix)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real\+Matrix} Real\+Matrix\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Real\+Matrix}}]{matrix}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_a53f477188b0cfea0b90a6923f05da7f9}
+Перегрузка оператора $\ast$ Умножает 2 матрицы 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em matrix} & второй параметр \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+результат операции 
+\end{DoxyReturn}
+\index{Real\+Matrix@{Real\+Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator$\ast$(int)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real\+Matrix} Real\+Matrix\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_ab9338c4e20a60a7009e87ea6a6a25d44}
+Перегрузка оператора $\ast$ Умножает число на матрицы 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em а} & второй параметр \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+результат операции 
+\end{DoxyReturn}
+\index{Real\+Matrix@{Real\+Matrix}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator$\ast$=(\+Real\+Matrix)}]{\setlength{\rightskip}{0pt plus 5cm}void Real\+Matrix\+::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{{\bf Real\+Matrix}}]{matrix}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_a9618153e0756126de4b09bd7a70eade0}
+Перегрузка оператора $\ast$= Умножает 2 матрицы, результат присваивает 1-\/му параметру 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em matrix} & второй параметр \\
+\hline
+\end{DoxyParams}
+\index{Real\+Matrix@{Real\+Matrix}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator$\ast$=(int)}]{\setlength{\rightskip}{0pt plus 5cm}void Real\+Matrix\+::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_aceb7e6609bf58f72ee88c80a391905be}
+Перегрузка оператора $\ast$= Умножает матрицу на число, результат записывает в первый параметр 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em а} & второй параметр \\
+\hline
+\end{DoxyParams}
+\index{Real\+Matrix@{Real\+Matrix}!operator+@{operator+}}
+\index{operator+@{operator+}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator+(\+Real\+Matrix)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real\+Matrix} Real\+Matrix\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf Real\+Matrix}}]{matrix}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_ab4b87e64d54f7038598a76f96b100854}
+Перегрузка оператора + Складывает 2 матрицы 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em matrix} & второй параметр \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+результат операции 
+\end{DoxyReturn}
+\index{Real\+Matrix@{Real\+Matrix}!operator+@{operator+}}
+\index{operator+@{operator+}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator+(int)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real\+Matrix} Real\+Matrix\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_a4ed4640b586dd019c804a14fb6921689}
+Перегрузка оператора + Складывает матрицу и число 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em matrix} & второй параметр \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+результат операции 
+\end{DoxyReturn}
+\index{Real\+Matrix@{Real\+Matrix}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator+=(\+Real\+Matrix)}]{\setlength{\rightskip}{0pt plus 5cm}void Real\+Matrix\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{{\bf Real\+Matrix}}]{matrix}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_a4ebfd74c7ae62cd63bf0add3f3989d8d}
+Перегрузка оператора += Складывает 2 матрицы, результат возвращает в первый параметр 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em matrix} & второй параметр \\
+\hline
+\end{DoxyParams}
+\index{Real\+Matrix@{Real\+Matrix}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator+=(int)}]{\setlength{\rightskip}{0pt plus 5cm}void Real\+Matrix\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_a545a1495dfd1bd721ad875bd68bfdfcf}
+Перегрузка оператора += Складывает матрицу и число, возвращает в первый параметр 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em matrix} & второй параметр \\
+\hline
+\end{DoxyParams}
+\index{Real\+Matrix@{Real\+Matrix}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator-\/(\+Real\+Matrix)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real\+Matrix} Real\+Matrix\+::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf Real\+Matrix}}]{matrix}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_ad228ff575e1666987716a119d0674405}
+Перегрузка оператора -\/ Умножает 2 матрицы 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em matrix} & второй параметр \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+результат операции 
+\end{DoxyReturn}
+\index{Real\+Matrix@{Real\+Matrix}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator-\/(int)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real\+Matrix} Real\+Matrix\+::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_ae7d33fca0f2d158996cd467dfb67358c}
+Перегрузка оператора -\/ Отнимает от матрицы число 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em а} & второй параметр \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+результат операции 
+\end{DoxyReturn}
+\index{Real\+Matrix@{Real\+Matrix}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator-\/=(\+Real\+Matrix)}]{\setlength{\rightskip}{0pt plus 5cm}void Real\+Matrix\+::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{{\bf Real\+Matrix}}]{matrix}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_a0a88f534a596c050d43cb7f30cccf6fc}
+Перегрузка оператора -\/= Умножает 2 матрицы, результат присваивает 1-\/му параметру 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em matrix} & второй параметр \\
+\hline
+\end{DoxyParams}
+\index{Real\+Matrix@{Real\+Matrix}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator-\/=(int)}]{\setlength{\rightskip}{0pt plus 5cm}void Real\+Matrix\+::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_a29e4b370e84b161d860a8a49e6574baa}
+Перегрузка оператора -\/= Отнимает от матрицы число, сохраняет в первый параметр 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em matrix} & второй параметр \\
+\hline
+\end{DoxyParams}
+\index{Real\+Matrix@{Real\+Matrix}!operator/@{operator/}}
+\index{operator/@{operator/}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator/(double)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real\+Matrix} Real\+Matrix\+::operator/ (
+\begin{DoxyParamCaption}
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_a2891560b2180f82ec9ea0cfc59082c60}
+Перегрузка оператора / Делит матрицу на число 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & второй параметр \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+результат операции 
+\end{DoxyReturn}
+\index{Real\+Matrix@{Real\+Matrix}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator/=(double)}]{\setlength{\rightskip}{0pt plus 5cm}void Real\+Matrix\+::operator/= (
+\begin{DoxyParamCaption}
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_a417479bdb1aa65b68c0b3fbe0ba909cc}
+Перегрузка оператора /= Делит матрицу на число, возвращает в первый параметр 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em matrix} & второй параметр \\
+\hline
+\end{DoxyParams}
+\index{Real\+Matrix@{Real\+Matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator=(\+Real\+Matrix \&)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real\+Matrix} \& Real\+Matrix\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Real\+Matrix} \&}]{mat}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_aeeec512ba986a2c466d62c20791566ec}
+Перегрузка оператора = 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em matrix} & второй параметр \\
+\hline
+\end{DoxyParams}
+\index{Real\+Matrix@{Real\+Matrix}!operator$^\wedge$@{operator$^\wedge$}}
+\index{operator$^\wedge$@{operator$^\wedge$}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator$^\wedge$(int)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real\+Matrix} Real\+Matrix\+::operator$^\wedge$ (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_ad4d7fcc70107f777b0c666cb92cc0262}
+Перегрузка оператора $^\wedge$= Возводит матрицу в степень, возвращает в первый параметр 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em matrix} & второй параметр \\
+\hline
+\end{DoxyParams}
+\index{Real\+Matrix@{Real\+Matrix}!operator$^\wedge$=@{operator$^\wedge$=}}
+\index{operator$^\wedge$=@{operator$^\wedge$=}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{operator$^\wedge$=(int)}]{\setlength{\rightskip}{0pt plus 5cm}void Real\+Matrix\+::operator$^\wedge$= (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_a3e5926422c54f8ea57027e24dd208292}
+Перегрузка оператора $^\wedge$= Возводит матрицу в степень 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em matrix} & второй параметр \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+результат операции 
+\end{DoxyReturn}
+\index{Real\+Matrix@{Real\+Matrix}!print\+Matrix@{print\+Matrix}}
+\index{print\+Matrix@{print\+Matrix}!Real\+Matrix@{Real\+Matrix}}
+\subsubsection[{print\+Matrix()}]{\setlength{\rightskip}{0pt plus 5cm}void Real\+Matrix\+::print\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_real_matrix_a4edb5d7f3474da052e37c4be144765eb}
+Печатает матрицу 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+matrix/{\bf Real\+Matrix.\+h}\item 
+matrix/{\bf Real\+Matrix.\+cpp}\end{DoxyCompactItemize}
